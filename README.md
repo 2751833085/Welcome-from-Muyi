@@ -1,94 +1,19 @@
 # Welcome from Muyi
 
-**Welcome from Muyi** is my portfolio website. It collects my **Critical Computation** coursework at Parsons School of Design (Design & Technology BFA) — from the first P5.js sketches in CC Lab to the HTML, CSS, JavaScript and API projects of Advanced CC.
+My portfolio website.
 
-**Live site → [2751833085.github.io/Welcome-from-Muyi](https://2751833085.github.io/Welcome-from-Muyi/)**
+**[Open the site](https://2751833085.github.io/Welcome-from-Muyi/)**
 
-> "A website is like a tree, which needs to be cultivated." This site keeps growing as the coursework does.
+## Sections
 
-## Where to go
-
-The home page has three sections. **Critical Computation & Games** opens the hub below; **Projects** and **Photography** are marked "To be continued" and cannot be entered yet.
-
-| Page | What you will find | Live | Source |
-| --- | --- | --- | --- |
-| Home | Entry point with navigation to every section | [Open](https://2751833085.github.io/Welcome-from-Muyi/) | [`index.html`](index.html) |
-| About Me | Who I am, my skills, and how this site came together | [Open](https://2751833085.github.io/Welcome-from-Muyi/About%20Me%20Page/about.html) | [`About Me Page/`](About%20Me%20Page) |
-| Critical Computation & Games | Section hub: links to CC-Lab Works, Advanced CC Works and a few quick entries | [Open](https://2751833085.github.io/Welcome-from-Muyi/Critical%20Computation%20Pages/critical-computation.html) | [`Critical Computation Pages/`](Critical%20Computation%20Pages) |
-| CC-Lab Works | Five early P5.js projects: Dream, Time, Identity, Control, Game | [Open](https://2751833085.github.io/Welcome-from-Muyi/CC-Lab%20Pages/cc-lab.html) | [`CC-Lab Pages/`](CC-Lab%20Pages) |
-| Advanced CC Works | Index of the five Advanced CC projects below | [Open](https://2751833085.github.io/Welcome-from-Muyi/Advanced%20CC%20Pages/advanced-cc.html) | [`Advanced CC Pages/`](Advanced%20CC%20Pages) |
-
-### Advanced CC projects
-
-| # | Project | Summary | Live | Source |
-| --- | --- | --- | --- | --- |
-| I | Portfolio Website 2.0 | This website itself, redesigned | [Open](https://2751833085.github.io/Welcome-from-Muyi/) | [`index.html`](index.html) |
-| II | Words in Motion | *Minimize*, *Procrastinate* and *Irony*, each interpreted through three P5.js motion sketches, plus three final works | [Open](https://2751833085.github.io/Welcome-from-Muyi/Advanced%20CC%20Pages/Assignment%202/assignment2.html) | [`Assignment 2/`](Advanced%20CC%20Pages/Assignment%202) |
-| III | Experimental Camera | A retro Soviet EL surveillance interface with hand-tracked interaction | [Open](https://2751833085.github.io/Welcome-from-Muyi/Advanced%20CC%20Pages/Experimental%20Camera/experimental-camera.html) | [`Experimental Camera/`](Advanced%20CC%20Pages/Experimental%20Camera) |
-| IV | Community Tool | Phantopteryx Toolbox by Oneiron v0.1.0 — a lightweight browser toolbox for image editing and divination | [Open](https://2751833085.github.io/Welcome-from-Muyi/Advanced%20CC%20Pages/Community%20Tool/community-tool.html) | [`Community Tool/`](Advanced%20CC%20Pages/Community%20Tool) |
-| V | Digital Divination | The toolbox rebuilt into a desktop-style image editing workspace hosted on Firebase | [Open](https://2751833085.github.io/Welcome-from-Muyi/Advanced%20CC%20Pages/Digital%20Divination/digital-divination.html) | [`Digital Divination/`](Advanced%20CC%20Pages/Digital%20Divination) |
-
-### Related links
-
-- [Phantopteryx Toolbox (final project, live)](https://phantopteryx-toolbox.web.app/)
-- [Phantopteryx Toolbox by Oneiron — source repository](https://github.com/2751833085/Phantopteryx-Toolbox-by-Oneiron)
-- [Advanced CC Works — source repository](https://github.com/2751833085/Advanced-CC-Works)
-- [Toolbox prototype preserved in this repo](https://2751833085.github.io/Welcome-from-Muyi/Phantopteryx-Toolbox/toolbox.html) ([`Phantopteryx-Toolbox/`](Phantopteryx-Toolbox))
-- [My GitHub profile](https://github.com/2751833085)
-
-## Features
-
-- **Loading animation only when it matters.** The lemniscate particle loader plays when you enter the site or refresh a page. Moving between pages inside the site uses native cross-document view transitions, with a short fade as the fallback.
-- **Fast navigation.** Internal links are real `<a>` elements, prefetched with speculation rules when you hover them. The hero artwork ships as WebP with a PNG fallback and is skipped entirely on the mobile layout.
-- **Accessible by default.** Landmarks, `aria-current` on the active nav item, `rem`-based type that follows browser and OS text-size settings, and no horizontal overflow at 150% text.
-- **Animated hover underlines.** Navigation links and card titles draw their underline in from the left on hover or keyboard focus, and slide it out to the right on leave.
-- **Click-to-load sketches.** P5.js sketches stay unloaded until you ask for them, so pages with many sketches open fast.
-- **Desktop and phone layouts.** Phones get their own design: a ruled single column with hand-lettered titles, a book serif for reading, and Serafini Script glyphs as marks.
-- **Respects reduced motion.** Page transitions, underline animations and the loader's breathing motion are disabled when the system asks for less motion.
-
-## Documentation
-
-Each section has its own Markdown notes next to the source:
-
-- [`About Me Page/README.md`](About%20Me%20Page/README.md) — the about page
-- [`CC-Lab Pages/README.md`](CC-Lab%20Pages/README.md) — the five CC Lab sketches
-- [`Advanced CC Pages/README.md`](Advanced%20CC%20Pages/README.md) — the five Advanced CC projects
-- [`Phantopteryx-Toolbox/README.md`](Phantopteryx-Toolbox/README.md) — the preserved toolbox prototype
-- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — how the loader, page transitions and styles fit together
-
-## Project structure
-
-```text
-.
-├── index.html               Home page
-├── assets/
-│   ├── css/home.css         Home page styles
-│   ├── css/pages.css        Styles shared by every section page
-│   ├── js/loader.js         Loading animation and page transitions (shared by every page)
-│   ├── fonts/               Bradley Hand and Serafini Script
-│   └── images/              Hero artwork (WebP plus PNG fallback)
-├── About Me Page/           About page
-├── Critical Computation Pages/   Hub for the Critical Computation & Games section
-├── CC-Lab Pages/            CC Lab archive
-├── Advanced CC Pages/       Advanced CC index and the per-project pages
-├── Phantopteryx-Toolbox/    Preserved community-tool prototype and its demo apps
-└── docs/                    Architecture notes
-```
+- **Critical Computation & Games** — CC Lab works, Advanced CC works and a few small things to try
+- **Projects** — to be continued
+- **Photography** — to be continued
 
 ## Run locally
-
-The site is plain HTML, CSS and JavaScript with no build step. Serve the folder with any static server:
 
 ```bash
 python3 -m http.server 8000
 ```
 
 Then open <http://localhost:8000>.
-
-## Built with
-
-HTML · CSS · JavaScript · [p5.js](https://p5js.org/), following [Modern Web Guidance 1.0](https://developer.chrome.com/docs/modern-web-guidance)
-
-## Acknowledgements
-
-Thanks to Matías Piña Aguilera for continuous support and guidance throughout the course.
