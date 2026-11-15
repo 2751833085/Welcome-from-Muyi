@@ -148,8 +148,8 @@ html.is-loading body {
 
 .text1 { top: calc(var(--top-space) + 5vw); right: 8%; width: 30%; }
 .text2 { top: 105vw; right: 6%; width: 24%; }
-.text3 { top: 131vw; left: 18%; width: 34%; }
-.text4 { top: 170vw; left: 8%; width: 25%; }
+.text3 { top: 131vw; left: 8%; width: 34%; --accent: #5b6b52; }
+.text4 { top: 170vw; left: 8%; width: 25%; --accent: #9a5563; }
 
 html.is-loading .topbar,
 html.is-loading .drawing,
@@ -200,7 +200,8 @@ p {
 
 .text2 .text-route { font-size: clamp(1.44rem, 3vw, 3.6rem); }
 .text2 p,
-.text3 p { font-size: clamp(0.624rem, 1.3vw, 1.56rem); }
+.text3 p,
+.text4 p { font-size: clamp(0.624rem, 1.3vw, 1.56rem); }
 
 .text-route a {
     color: inherit;
@@ -208,11 +209,13 @@ p {
 }
 
 .text-route.is-pending {
+    color: var(--accent, #8B4513);
     cursor: default;
-    opacity: 0.72;
 }
 
-.pending-note {
+.text3 .pending-note,
+.text4 .pending-note {
+    color: var(--accent, #4a4a4a);
     font-size: clamp(0.816rem, 1.7vw, 2.04rem);
     font-style: italic;
 }
@@ -322,6 +325,7 @@ html.is-direct .mobile-home { animation-delay: 0ms; }
         --mobile-rust: #8B4513;
         --mobile-green: #68775f;
         --mobile-blue: #526d80;
+        --mobile-rose: #9a5563;
     }
 
     html {
@@ -504,7 +508,11 @@ html.is-direct .mobile-home { animation-delay: 0ms; }
         border-radius: 8px;
         font-style: italic;
     }
+    .mobile-card.alt .mobile-pending { color: var(--mobile-green); border-color: rgba(104, 119, 95, 0.45); }
+    .mobile-card.rose .mobile-pending { color: var(--mobile-rose); border-color: rgba(154, 85, 99, 0.4); }
     .mobile-card.alt h2 { color: var(--mobile-green); }
+    .mobile-card.rose h2 { color: var(--mobile-rose); }
+    .mobile-card.rose { border-color: rgba(154, 85, 99, 0.2); }
     .mobile-card.note { border-color: rgba(82, 109, 128, 0.2); }
     .mobile-card.note h2 { color: var(--mobile-blue); }
 }
