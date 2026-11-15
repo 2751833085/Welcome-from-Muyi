@@ -2,7 +2,7 @@
 
 The about page of [Welcome from Muyi](../README.md).
 
-[Open the live page](https://2751833085.github.io/Muyi-s-Portfolio/About%20Me%20Page/about.html)
+[Open the live page](https://2751833085.github.io/Welcome-from-Muyi/About%20Me%20Page/about.html)
 
 ## Content
 

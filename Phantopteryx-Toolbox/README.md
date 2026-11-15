@@ -2,7 +2,7 @@
 
 The old community-tool prototype, preserved as a compact demo inside [Welcome from Muyi](../README.md). It uses its own dark, monospace look instead of the hand-drawn portfolio style.
 
-[Open the live prototype](https://2751833085.github.io/Muyi-s-Portfolio/Phantopteryx-Toolbox/toolbox.html)
+[Open the live prototype](https://2751833085.github.io/Welcome-from-Muyi/Phantopteryx-Toolbox/toolbox.html)
 
 The original research version combined image editing, divination and optional AI services. This cleaned version keeps the public-facing navigation and two small demos. The full, rebuilt project lives elsewhere:
 

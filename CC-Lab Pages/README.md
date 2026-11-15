@@ -2,7 +2,7 @@
 
 The archive of my first-year Critical Computation Lab projects, part of [Welcome from Muyi](../README.md).
 
-[Open the live page](https://2751833085.github.io/Muyi-s-Portfolio/CC-Lab%20Pages/cc-lab.html)
+[Open the live page](https://2751833085.github.io/Welcome-from-Muyi/CC-Lab%20Pages/cc-lab.html)
 
 ## Projects
 

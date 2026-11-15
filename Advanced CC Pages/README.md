@@ -2,7 +2,7 @@
 
 The five projects from this year's Advanced Critical Computation course, part of [Welcome from Muyi](../README.md).
 
-[Open the live page](https://2751833085.github.io/Muyi-s-Portfolio/Advanced%20CC%20Pages/advanced-cc.html)
+[Open the live page](https://2751833085.github.io/Welcome-from-Muyi/Advanced%20CC%20Pages/advanced-cc.html)
 
 ## Projects
 
