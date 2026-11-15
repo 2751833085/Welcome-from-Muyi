@@ -43,7 +43,7 @@ The home page has three sections. **Critical Computation & Games** opens the hub
 - **Accessible by default.** Landmarks, `aria-current` on the active nav item, `rem`-based type that follows browser and OS text-size settings, and no horizontal overflow at 150% text.
 - **Animated hover underlines.** Navigation links and card titles draw their underline in from the left on hover or keyboard focus, and slide it out to the right on leave.
 - **Click-to-load sketches.** P5.js sketches stay unloaded until you ask for them, so pages with many sketches open fast.
-- **Desktop and mobile layouts.** The home page switches to a compact card layout on small screens.
+- **Desktop and phone layouts.** Phones get their own design: a ruled single column with hand-lettered titles, a book serif for reading, and Serafini Script glyphs as marks.
 - **Respects reduced motion.** Page transitions, underline animations and the loader's breathing motion are disabled when the system asks for less motion.
 
 ## Documentation
@@ -65,7 +65,7 @@ Each section has its own Markdown notes next to the source:
 │   ├── css/home.css         Home page styles
 │   ├── css/pages.css        Styles shared by every section page
 │   ├── js/loader.js         Loading animation and page transitions (shared by every page)
-│   ├── fonts/               Bradley Hand
+│   ├── fonts/               Bradley Hand and Serafini Script
 │   └── images/              Hero artwork (WebP plus PNG fallback)
 ├── About Me Page/           About page
 ├── Critical Computation Pages/   Hub for the Critical Computation & Games section

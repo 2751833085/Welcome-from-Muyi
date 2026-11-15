@@ -1,3 +1,4 @@
+@font-face { font-family: 'Serafini Script'; src: url('../fonts/SerafiniScript.ttf'); font-display: swap; }
 @font-face { font-family: 'Bradley Hand'; src: url('../fonts/BradleyHandITCTT-Bold.ttf'); }
 
 :root {
@@ -404,6 +405,101 @@ h3 { text-wrap: balance;
 }
 
 p { text-wrap: pretty;
+}
+
+/* Phones: the same notebook page as the home screen. Boxes become ruled
+   sections, reading text switches to a book serif, and a line of Serafini
+   glyphs sits above the title. */
+@media (max-width: 47.5em) {
+    :root {
+        --m-line: rgba(62, 44, 30, 0.22);
+        --m-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "Songti SC", Georgia, serif;
+    }
+
+    body {
+        padding: 0 1.375rem 3rem;
+    }
+
+    .back {
+        position: static;
+        display: block;
+        width: auto;
+        min-height: 0;
+        margin: 0 0 1.75rem;
+        padding: 1.25rem 0 1rem;
+        border: 0;
+        border-bottom: 1px solid var(--m-line);
+        border-radius: 0;
+        background: none;
+        box-shadow: none;
+        font-family: var(--m-serif);
+        font-size: 0.8125rem;
+        font-variant-caps: all-small-caps;
+        letter-spacing: 0.14em;
+        text-align: left;
+    }
+
+    h1 {
+        margin: 0 0 1.125rem;
+        font-size: clamp(3rem, 15vw, 4.75rem);
+        line-height: 0.95;
+    }
+
+    h1::before {
+        content: "muyi";
+        content: "muyi" / "";
+        display: block;
+        margin-bottom: 0.875rem;
+        font-family: "Serafini Script", "Bradley Hand", cursive;
+        font-size: 1.625rem;
+        font-size-adjust: none;
+        font-weight: normal;
+        letter-spacing: 0.1em;
+        line-height: 1;
+        opacity: 0.62;
+    }
+
+    .intro,
+    .card p,
+    .logic-card p,
+    .toolbox-copy,
+    .project-copy,
+    .placeholder {
+        color: var(--ink);
+        font-family: var(--m-serif);
+        font-size: 1.0625rem;
+        line-height: 1.6;
+    }
+
+    .intro {
+        margin: 0 0 1.75rem;
+        font-size: 1.1875rem;
+        font-style: italic;
+        line-height: 1.5;
+    }
+
+    .grid,
+    .logic-grid {
+        gap: 0;
+    }
+
+    .content,
+    .card,
+    .logic-card {
+        padding: 1.5rem 0 1.625rem;
+        border: 0;
+        border-top: 1px solid var(--m-line);
+        border-radius: 0;
+        background: none;
+        box-shadow: none;
+    }
+
+    .card h2,
+    .logic-card h2 {
+        margin-bottom: 0.625rem;
+        font-size: 2.125rem;
+        line-height: 1.02;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {

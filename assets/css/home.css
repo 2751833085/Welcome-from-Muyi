@@ -1,3 +1,4 @@
+@font-face { font-family: 'Serafini Script'; src: url('../fonts/SerafiniScript.ttf'); font-display: swap; }
 @font-face { font-family: 'Bradley Hand'; src: url('../fonts/BradleyHandITCTT-Bold.ttf'); }
 
 * { box-sizing: border-box; }
@@ -243,7 +244,8 @@ html.is-direct .mobile-home { animation-delay: 0ms; }
     font-size: clamp(0.816rem, 1.7vw, 2.04rem);
 }
 
-.text-route u {
+.text-route u,
+.m-link u {
     position: relative;
     display: inline-block;
     padding-bottom: 0.03em;
@@ -252,7 +254,9 @@ html.is-direct .mobile-home { animation-delay: 0ms; }
 }
 
 .text-route u::before,
-.text-route u::after {
+.text-route u::after,
+.m-link u::before,
+.m-link u::after {
     content: "";
     position: absolute;
     pointer-events: none;
@@ -266,7 +270,8 @@ html.is-direct .mobile-home { animation-delay: 0ms; }
     transform-origin: left center;
 }
 
-.text-route u::before {
+.text-route u::before,
+.m-link u::before {
     left: 0.02em;
     right: 0.02em;
     bottom: -0.05em;
@@ -277,7 +282,8 @@ html.is-direct .mobile-home { animation-delay: 0ms; }
     mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 24' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 15 C16 10 27 17 40 13 C54 9 68 15 82 13 C94 11 106 17 116 12' fill='none' stroke='black' stroke-width='7.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
-.text-route u::after {
+.text-route u::after,
+.m-link u::after {
     left: 0.08em;
     right: 0;
     bottom: -0.08em;
@@ -318,32 +324,31 @@ html.is-direct .mobile-home { animation-delay: 0ms; }
 
 @media (max-width: 47.5em) {
     :root {
-        --mobile-ink: #2f2b27;
-        --mobile-muted: #6d655d;
-        --mobile-line: rgba(62, 44, 30, 0.16);
-        --mobile-paper: rgba(255, 252, 242, 0.8);
-        --mobile-rust: #8B4513;
-        --mobile-green: #68775f;
-        --mobile-blue: #526d80;
-        --mobile-rose: #9a5563;
-    }
-
-    html {
-        background-size: 165% auto;
+        --m-ink: #2f2b27;
+        --m-muted: #6d655d;
+        --m-line: rgba(62, 44, 30, 0.22);
+        --m-rust: #8B4513;
+        --m-green: #5b6b52;
+        --m-rose: #9a5563;
+        --m-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "Songti SC", Georgia, serif;
+        --m-gutter: 1.375rem;
     }
 
     .topbar,
-    .drawing,
+    .hero-art,
     .text1,
     .text2,
     .text3,
     .text4 { display: none; }
 
+    /* One quiet column, like a page from a notebook: no boxes, only rules,
+       with hand lettering for titles, a book serif for reading, and the
+       Serafini glyphs as marks. */
     .mobile-home {
         display: block;
         min-height: 100dvh;
-        padding: 14px 14px 32px;
-        color: var(--mobile-ink);
+        padding: 0 var(--m-gutter) 3rem;
+        color: var(--m-ink);
         opacity: 0;
         transform: translateY(18px);
         animation: layerIn 720ms ease-out 260ms forwards;
@@ -355,166 +360,203 @@ html.is-direct .mobile-home { animation-delay: 0ms; }
         animation: none;
     }
 
-    .mobile-bar {
-        position: sticky;
-        top: 10px;
-        z-index: 6;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: center;
-        gap: 12px;
-        min-height: 54px;
-        margin-bottom: 14px;
-        padding: 10px 12px;
-        border: 1px solid rgba(139, 69, 19, 0.22);
-        border-radius: 8px;
-        background: rgba(255, 250, 238, 0.84);
-        box-shadow: 0 8px 28px rgba(80, 50, 22, 0.12);
-        backdrop-filter: blur(10px);
-    }
-
-    .mobile-brand {
-        margin: 0;
-        color: var(--mobile-rust);
-        font-size: 1.5rem;
-        line-height: 1;
-        white-space: nowrap;
-    }
-
-    .mobile-bar span,
-    .mobile-link small,
-    .mobile-kicker,
-    .mobile-eyebrow {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-        text-transform: uppercase;
-    }
-
-    .mobile-bar span {
-        color: var(--mobile-muted);
-        font-size: 0.6875rem;
-        line-height: 1;
-    }
-
-    .mobile-stack {
-        display: grid;
-        gap: 14px;
-    }
-
-    .mobile-panel,
-    .mobile-card {
-        border: 1px solid var(--mobile-line);
-        border-radius: 8px;
-        background: var(--mobile-paper);
-        box-shadow: 0 16px 42px rgba(65, 47, 30, 0.12);
-        backdrop-filter: blur(8px);
-    }
-
-    .mobile-panel {
-        display: grid;
-        gap: 18px;
-        padding: 20px;
-    }
-
-    .mobile-panel.hero {
-        min-height: 410px;
-        align-content: space-between;
-    }
-
-    .mobile-home h1 {
-        margin: 0;
-        color: var(--mobile-rust);
-        font-size: clamp(3.75rem, 18vw, 5.75rem);
-        line-height: 0.86;
-    }
-
-    .mobile-home .outline {
-        color: transparent;
-        -webkit-text-stroke: 1.1px var(--mobile-rust);
-        text-stroke: 1.1px var(--mobile-rust);
-    }
-
     .mobile-home p {
         margin: 0;
-        color: var(--mobile-muted);
+        color: var(--m-ink);
+        font-family: var(--m-serif);
         font-size: 1.0625rem;
-        line-height: 1.42;
+        line-height: 1.6;
     }
 
-    .mobile-kicker,
-    .mobile-eyebrow {
-        color: var(--mobile-blue);
-        font-size: 0.6875rem;
-        line-height: 1.2;
+    .m-mark,
+    .m-script,
+    .m-seal {
+        font-family: "Serafini Script", "Bradley Hand", cursive;
+        font-size-adjust: none;
+        font-weight: normal;
+        font-style: normal;
+        overflow-wrap: normal;
+        white-space: nowrap;
+        user-select: none;
     }
 
-    .mobile-actions,
-    .mobile-grid {
+    /* Masthead */
+    .m-mast {
         display: grid;
-        gap: 10px;
-    }
-
-    .mobile-link {
-        display: grid;
-        grid-template-columns: 1fr auto;
+        grid-template-columns: auto 1fr auto;
         align-items: center;
-        gap: 12px;
-        min-height: 58px;
-        margin: 0;
-        padding: 12px 13px;
-        border: 1px solid var(--mobile-line);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.36);
-        color: var(--mobile-rust);
-        font: inherit;
-        font-size: 1.5rem;
-        line-height: 1;
-        text-align: left;
-        text-decoration: none;
-        cursor: pointer;
+        gap: 0.625rem;
+        padding: 1.125rem 0 0.875rem;
+        border-bottom: 1px solid var(--m-line);
     }
 
-    .mobile-link small {
-        display: block;
-        margin-top: 5px;
-        color: var(--mobile-muted);
-        font-size: 0.625rem;
+    .m-mark {
+        color: var(--m-rust);
+        font-size: 1.75rem;
+        line-height: 1;
+        letter-spacing: 0.04em;
+    }
+
+    .m-mast-name,
+    .m-mast-link,
+    .mobile-home .m-label {
+        color: var(--m-muted);
+        font-family: var(--m-serif);
+        font-size: 0.8125rem;
+        font-variant-caps: all-small-caps;
+        letter-spacing: 0.14em;
         line-height: 1.2;
     }
 
-    .mobile-link::after {
-        content: "->";
-        color: currentColor;
-        font-size: 1.25rem;
+    .m-mast-link {
+        min-height: 1.5rem;
+        padding: 0.25rem 0;
+        color: var(--m-rust);
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.3em;
     }
 
-    .mobile-card {
+    /* Hero */
+    .m-hero {
+        padding: 2.25rem 0 0.5rem;
+    }
+
+    .m-hero h1 {
+        margin: 0.625rem 0 0;
+        color: var(--m-rust);
+        font-size: clamp(3.5rem, 19vw, 5.5rem);
+        line-height: 0.92;
+        letter-spacing: -0.01em;
+    }
+
+    .m-hero .outline {
+        display: block;
+        -webkit-text-stroke: 1.1px var(--m-rust);
+        text-stroke: 1.1px var(--m-rust);
+    }
+
+    .mobile-home .m-script {
+        margin: 1.125rem 0 0;
+        color: var(--m-rust);
+        font-family: "Serafini Script", "Bradley Hand", cursive;
+        font-size: 1.625rem;
+        line-height: 1;
+        letter-spacing: 0.1em;
+        word-spacing: 0.3em;
+        opacity: 0.62;
+    }
+
+    .mobile-home .m-lede {
+        margin: 1.375rem 0 0;
+        max-width: 22em;
+        font-size: 1.1875rem;
+        font-style: italic;
+        line-height: 1.5;
+    }
+
+    .m-link {
+        display: inline-block;
+        margin: 1.125rem 0 0;
+        padding: 0.25rem 0;
+        color: var(--accent, var(--m-rust));
+        font-size: 1.75rem;
+        line-height: 1.1;
+        text-decoration: none;
+    }
+
+    /* Artwork, bled to the screen edges */
+    .m-art {
+        display: block;
+        margin: 0.5rem calc(-1 * var(--m-gutter)) 0;
+    }
+
+    .m-art img {
+        display: block;
+        width: 100%;
+        height: auto;
+        mix-blend-mode: multiply;
+    }
+
+    /* Section index */
+    .m-index {
+        margin: 1rem 0 0;
+        padding: 0;
+        list-style: none;
+        border-bottom: 1px solid var(--m-line);
+    }
+
+    .m-entry {
+        --accent: var(--m-rust);
         display: grid;
-        gap: 12px;
-        padding: 16px;
+        grid-template-columns: 3.75rem minmax(0, 1fr);
+        column-gap: 1rem;
+        padding: 1.625rem 0 1.75rem;
+        border-top: 1px solid var(--m-line);
     }
 
-    .mobile-card h2 {
-        margin: 0;
-        color: var(--mobile-rust);
-        font-size: 2.125rem;
+    .m-entry.is-green { --accent: var(--m-green); }
+    .m-entry.is-rose { --accent: var(--m-rose); }
+
+    .m-entry > * { grid-column: 2; }
+
+    .m-seal {
+        grid-column: 1;
+        grid-row: 1 / span 3;
+        align-self: start;
+        display: grid;
+        place-items: center;
+        width: 3.75rem;
+        aspect-ratio: 1;
+        border: 1px solid var(--accent);
+        border-radius: 50%;
+        color: var(--accent);
+        font-size: 2.375rem;
         line-height: 1;
     }
 
-    .mobile-card p { font-size: 1rem; }
-    .mobile-card .mobile-pending {
-        margin: 0;
-        padding: 12px 13px;
-        border: 1px dashed var(--mobile-line);
-        border-radius: 8px;
+    .m-entry h2 {
+        margin: 0.25rem 0 0.75rem;
+        color: var(--accent);
+        font-size: 2.125rem;
+        font-weight: 700;
+        line-height: 1.02;
+    }
+
+    .mobile-home .m-pending {
+        margin-top: 1rem;
+        color: var(--accent);
+        font-size: 1rem;
         font-style: italic;
     }
-    .mobile-card.alt .mobile-pending { color: var(--mobile-green); border-color: rgba(104, 119, 95, 0.45); }
-    .mobile-card.rose .mobile-pending { color: var(--mobile-rose); border-color: rgba(154, 85, 99, 0.4); }
-    .mobile-card.alt h2 { color: var(--mobile-green); }
-    .mobile-card.rose h2 { color: var(--mobile-rose); }
-    .mobile-card.rose { border-color: rgba(154, 85, 99, 0.2); }
-    .mobile-card.note { border-color: rgba(82, 109, 128, 0.2); }
-    .mobile-card.note h2 { color: var(--mobile-blue); }
+
+    .m-pending::before {
+        content: "";
+        display: inline-block;
+        width: 1.75rem;
+        margin-right: 0.625rem;
+        border-top: 1px dashed currentColor;
+        vertical-align: 0.3em;
+    }
+
+    /* Colophon */
+    .m-colophon {
+        padding-top: 1.5rem;
+        text-align: center;
+    }
+
+    .mobile-home .m-colophon .m-script {
+        margin: 0 0 1rem;
+        font-size: 1.875rem;
+    }
+
+    .mobile-home .m-colophon p:last-child {
+        max-width: 26em;
+        margin-inline: auto;
+        color: var(--m-muted);
+        font-size: 0.9375rem;
+        font-style: italic;
+    }
 }
 
 h1,

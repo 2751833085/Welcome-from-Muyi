@@ -34,51 +34,59 @@
 
     <main>
     <div class="mobile-home">
-        <header class="mobile-bar">
-            <strong class="mobile-brand">Welcome from Muyi</strong>
-            <span>Portfolio</span>
+        <header class="m-mast">
+            <span class="m-mark" aria-hidden="true">muyi</span>
+            <span class="m-mast-name">Welcome from Muyi</span>
+            <a class="m-mast-link" href="About%20Me%20Page/about.html">About</a>
         </header>
 
-        <div class="mobile-stack">
-            <section class="mobile-panel hero">
-                <div>
-                    <span class="mobile-kicker">Critical Computation archive</span>
-                    <h1><span class="outline">Welcome</span><br>from Muyi</h1>
-                </div>
-                <p>A compact mobile doorway into my work: critical computation and games, with projects and photography on the way.</p>
-                <div class="mobile-actions">
-                    <a class="mobile-link" href="About%20Me%20Page/about.html"><span>About Me<small>profile and process</small></span></a>
-                </div>
-            </section>
+        <section class="m-hero">
+            <p class="m-label">Portfolio</p>
+            <h1><span class="outline">Welcome</span> from Muyi</h1>
+            <p class="m-script" aria-hidden="true">welcome from muyi</p>
+            <p class="m-lede">Critical computation and games today, with projects and photography on the way.</p>
+            <a class="m-link" href="About%20Me%20Page/about.html">About <u>Me</u> -></a>
+        </section>
 
-            <section class="mobile-card">
-                <span class="mobile-eyebrow">Section 01</span>
+        <picture class="m-art">
+            <!-- Only the mobile layout shows this crop, so skip the download on wide screens. -->
+            <source media="(min-width: 47.51em)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+            <img src="assets/images/drawing-mobile-top.webp" alt="" width="760" height="952">
+        </picture>
+
+        <ol class="m-index">
+            <li class="m-entry">
+                <span class="m-seal" aria-hidden="true">c</span>
+                <p class="m-label">Section 01</p>
                 <h2>Critical Computation &amp; Games</h2>
-                <div class="mobile-grid">
-                    <a class="mobile-link" href="Critical%20Computation%20Pages/critical-computation.html"><span>Enter<small>CC Lab, Advanced CC, little doors</small></span></a>
-                </div>
-            </section>
-
-            <section class="mobile-card alt">
-                <span class="mobile-eyebrow">Section 02</span>
+                <p>Everything from my Critical Computation classes lives here: the five P5JS works from CC Lab, this year's Advanced CC projects in HTML, CSS, JavaScript and APIs, and a few little doors to try.</p>
+                <a class="m-link" href="Critical%20Computation%20Pages/critical-computation.html"><u>Enter</u> -></a>
+            </li>
+            <li class="m-entry is-green">
+                <span class="m-seal" aria-hidden="true">p</span>
+                <p class="m-label">Section 02</p>
                 <h2>Projects</h2>
                 <p>Work from projects outside my classes: an olfactory guided tour co-created with botanists at Kunming Botanical Garden, RE:LIVE, a wearable that turns live music into vibration, light and touch for Deaf and hard-of-hearing audiences, Tourgo, a city exploration app for New York, and small hardware games built with Arduino, along with the software tools I build for my own use.</p>
-                <p class="mobile-pending">To be continued</p>
-            </section>
-
-            <section class="mobile-card rose">
-                <span class="mobile-eyebrow">Section 03</span>
+                <p class="m-pending">To be continued</p>
+            </li>
+            <li class="m-entry is-rose">
+                <span class="m-seal" aria-hidden="true">f</span>
+                <p class="m-label">Section 03</p>
                 <h2>Photography</h2>
                 <p>I picked up a camera about half a year ago. This section will hold the photographs I have taken with it since then.</p>
-                <p class="mobile-pending">To be continued</p>
-            </section>
+                <p class="m-pending">To be continued</p>
+            </li>
+        </ol>
 
-            <section class="mobile-card note">
-                <span class="mobile-eyebrow">Advanced CC</span>
-                <h2>Thanks</h2>
-                <p>This year's course helped me learn practical skills around HTML, CSS, JavaScript, and API-based projects. I am grateful to Matías Piña Aguilera for his continuous support and guidance.</p>
-            </section>
-        </div>
+        <picture class="m-art">
+            <source media="(min-width: 47.51em)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+            <img src="assets/images/drawing-mobile-bottom.webp" alt="" width="760" height="684" loading="lazy">
+        </picture>
+
+        <footer class="m-colophon">
+            <p class="m-script" aria-hidden="true">thanks</p>
+            <p>This year's course helped me learn practical skills around HTML, CSS, JavaScript, and API-based projects. I am grateful to Matías Piña Aguilera for his continuous support and guidance.</p>
+        </footer>
     </div>
 
     <picture class="hero-art">

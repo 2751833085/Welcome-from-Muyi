@@ -35,9 +35,19 @@ All navigation uses ordinary `<a href>` links. A speculation-rules block in each
 - Font sizes use `rem` and `clamp()` so they follow browser and OS text-size settings.
 - Hover underlines on links are drawn with a background gradient that grows from the left.
 
+## Phone layout
+
+Below 47.5em the site switches to its own design rather than a shrunken desktop: a single ruled column with no boxes. It uses three typefaces, each with one job:
+
+- **Bradley Hand** for titles, as on desktop.
+- **A book serif** (Iowan Old Style, Palatino, Georgia) for reading text.
+- **Serafini Script** for marks only. Its glyphs are not readable text, so they appear as the masthead mark, the seal beside each section, and a line of ornament. They are hidden from screen readers.
+
+The home page rules live in `home.css`; the section pages share one block at the end of `pages.css`.
+
 ## Images
 
-The hero artwork is served through `<picture>`: WebP at two sizes with the original PNG as a fallback. On the mobile layout a 1×1 placeholder is selected, so the artwork is not downloaded.
+The hero artwork is served through `<picture>`: WebP at two sizes with the original PNG as a fallback. On the phone layout a 1×1 placeholder is selected instead, and two small crops of the same artwork (`drawing-mobile-top.webp`, `drawing-mobile-bottom.webp`) are shown; those are skipped on wide screens in the same way.
 
 ## Local development
 
