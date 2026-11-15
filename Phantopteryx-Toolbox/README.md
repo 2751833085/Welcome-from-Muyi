@@ -1,6 +1,6 @@
 # Phantopteryx Toolbox (prototype)
 
-The old community-tool prototype, preserved as a compact demo inside [Welcome from Muyi](../README.md). It uses its own dark, monospace look instead of the hand-drawn portfolio style.
+The old community-tool prototype, preserved as a compact demo inside [Welcome from Muyi](../README.md). It uses its own dark, monospace look instead of the main portfolio style.
 
 [Open the live prototype](https://2751833085.github.io/Welcome-from-Muyi/Phantopteryx-Toolbox/toolbox.html)
 

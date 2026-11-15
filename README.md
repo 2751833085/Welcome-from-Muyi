@@ -1,6 +1,6 @@
 # Welcome from Muyi
 
-**Welcome from Muyi** is the name of my portfolio website: a hand-drawn style site collecting my **Critical Computation** coursework at Parsons School of Design (Design & Technology BFA) — from the first P5.js sketches in CC Lab to the HTML, CSS, JavaScript and API projects of Advanced CC.
+**Welcome from Muyi** is my portfolio website. It collects my **Critical Computation** coursework at Parsons School of Design (Design & Technology BFA) — from the first P5.js sketches in CC Lab to the HTML, CSS, JavaScript and API projects of Advanced CC.
 
 **Live site → [2751833085.github.io/Welcome-from-Muyi](https://2751833085.github.io/Welcome-from-Muyi/)**
 
