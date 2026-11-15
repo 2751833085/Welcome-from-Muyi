@@ -148,9 +148,9 @@ html.is-loading body {
 }
 
 .text1 { top: calc(var(--top-space) + 5vw); right: 8%; width: 30%; }
-.text2 { top: 105vw; right: 6%; width: 24%; }
-.text3 { top: 131vw; left: 8%; width: 34%; --accent: #5b6b52; }
-.text4 { top: 170vw; left: 8%; width: 25%; --accent: #9a5563; }
+.text2 { top: 98.5vw; right: 6%; width: 24%; }
+.text3 { top: 124.5vw; left: 8%; width: 34%; --accent: #5b6b52; }
+.text4 { top: 163.5vw; left: 8%; width: 25%; --accent: #9a5563; }
 
 html.is-loading .topbar,
 html.is-loading .drawing,
@@ -230,6 +230,89 @@ html.is-direct .text2,
 html.is-direct .text3,
 html.is-direct .text4 { animation-delay: 240ms; }
 html.is-direct .mobile-home { animation-delay: 0ms; }
+
+/* Serafini Script glyphs are marks, not text: a seal per section, a line of
+   ornament, the brand mark. */
+.seal,
+.script,
+.brand-mark {
+    font-family: "Serafini Script", "Bradley Hand", cursive;
+    font-size-adjust: none;
+    font-weight: normal;
+    font-style: normal;
+    overflow-wrap: normal;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.seal {
+    display: grid;
+    place-items: center;
+    width: clamp(2.6rem, 4.4vw, 5.6rem);
+    aspect-ratio: 1;
+    margin: 0 0 1.1vw;
+    border: max(1px, 0.09vw) solid var(--accent, #8B4513);
+    border-radius: 50%;
+    color: var(--accent, #8B4513);
+    font-size: clamp(1.6rem, 2.8vw, 3.5rem);
+    line-height: 1;
+}
+
+p.script {
+    margin: -0.6vw 0 1.6vw;
+    color: #8B4513;
+    font-size: clamp(0.9rem, 1.9vw, 2.3rem);
+    line-height: 1;
+    letter-spacing: 0.1em;
+    word-spacing: 0.3em;
+    opacity: 0.62;
+}
+
+p.label,
+h2.label {
+    margin: 0 0 0.35vw;
+    color: #6d655d;
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "Songti SC", Georgia, serif;
+    font-size: clamp(0.66rem, 1.1vw, 1.3rem);
+    font-variant-caps: all-small-caps;
+    font-weight: normal;
+    letter-spacing: 0.14em;
+    line-height: 1.2;
+}
+
+.topbar .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+}
+
+.brand-mark {
+    font-size: 0.9em;
+    letter-spacing: 0.04em;
+    opacity: 0.8;
+}
+
+/* Extra room below the artwork for the acknowledgements. */
+.colophon {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    justify-items: center;
+    padding: 5vw 8% 8vw;
+    border-top: max(1px, 0.07vw) solid rgba(62, 44, 30, 0.22);
+    margin: 4vw 8% 0;
+    text-align: center;
+}
+
+.colophon .seal { margin-bottom: 1.4vw; }
+.colophon p.script { margin: 0 0 1.6vw; }
+.colophon .label { margin-bottom: 1vw; }
+
+.colophon p:last-child {
+    max-width: 34em;
+    margin: 0;
+    font-size: clamp(0.72rem, 1.5vw, 1.8rem);
+}
 
 .title {
     display: block;
@@ -336,6 +419,7 @@ html.is-direct .mobile-home { animation-delay: 0ms; }
 
     .topbar,
     .hero-art,
+    .colophon,
     .text1,
     .text2,
     .text3,
