@@ -18,7 +18,7 @@ The five projects from this year's Advanced Critical Computation course, part of
 
 ### Assignment 2
 
-`sketches/` holds twelve self-contained P5.js sketches. Folders `1-x`, `2-x` and `3-x` are the three versions of each word; `Final 1` to `Final 3` are the finished pieces. Each sketch is loaded into an iframe on demand.
+`sketches/` holds twelve self-contained P5.js sketches. Folders `1-x`, `2-x` and `3-x` are the three versions of each word; `Final 1` to `Final 3` are the finished pieces. Each sketch is loaded into an iframe on demand. They all share one copy of p5.js and p5.sound in `sketches/lib/`.
 
 ### Experimental Camera
 
