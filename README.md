@@ -1,6 +1,6 @@
-# Muyi's Portfolio
+# Welcome from Muyi
 
-A hand-drawn style portfolio site collecting my **Critical Computation** coursework at Parsons School of Design (Design & Technology BFA) — from the first P5.js sketches in CC Lab to the HTML, CSS, JavaScript and API projects of Advanced CC.
+**Welcome from Muyi** is the name of my portfolio website: a hand-drawn style site collecting my **Critical Computation** coursework at Parsons School of Design (Design & Technology BFA) — from the first P5.js sketches in CC Lab to the HTML, CSS, JavaScript and API projects of Advanced CC.
 
 **Live site → [2751833085.github.io/Muyi-s-Portfolio](https://2751833085.github.io/Muyi-s-Portfolio/)**
 
@@ -43,6 +43,16 @@ A hand-drawn style portfolio site collecting my **Critical Computation** coursew
 - **Desktop and mobile layouts.** The home page switches to a compact card layout on small screens.
 - **Respects reduced motion.** Page transitions, underline animations and the loader's breathing motion are disabled when the system asks for less motion.
 
+## Documentation
+
+Each section has its own Markdown notes next to the source:
+
+- [`About Me Page/README.md`](About%20Me%20Page/README.md) — the about page
+- [`CC-Lab Pages/README.md`](CC-Lab%20Pages/README.md) — the five CC Lab sketches
+- [`Advanced CC Pages/README.md`](Advanced%20CC%20Pages/README.md) — the five Advanced CC projects
+- [`Phantopteryx-Toolbox/README.md`](Phantopteryx-Toolbox/README.md) — the preserved toolbox prototype
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — how the loader, page transitions and styles fit together
+
 ## Project structure
 
 ```text
@@ -54,7 +64,8 @@ A hand-drawn style portfolio site collecting my **Critical Computation** coursew
 ├── About Me Page/           About page
 ├── CC-Lab Pages/            CC Lab archive
 ├── Advanced CC Pages/       Advanced CC index and the per-project pages
-└── Phantopteryx-Toolbox/    Preserved community-tool prototype and its demo apps
+├── Phantopteryx-Toolbox/    Preserved community-tool prototype and its demo apps
+└── docs/                    Architecture notes
 ```
 
 ## Run locally
