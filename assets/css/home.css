@@ -272,11 +272,8 @@ p.label,
 h2.label {
     margin: 0 0 0.35vw;
     color: #6d655d;
-    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", "Songti SC", Georgia, serif;
-    font-size: clamp(0.66rem, 1.1vw, 1.3rem);
-    font-variant-caps: all-small-caps;
-    font-weight: normal;
-    letter-spacing: 0.14em;
+    font: inherit;
+    font-size: clamp(0.72rem, 1.3vw, 1.56rem);
     line-height: 1.2;
 }
 
@@ -299,8 +296,7 @@ h2.label {
     display: grid;
     justify-items: center;
     padding: 5vw 8% 8vw;
-    border-top: max(1px, 0.07vw) solid rgba(62, 44, 30, 0.22);
-    margin: 4vw 8% 0;
+    margin: 2vw 8% 0;
     text-align: center;
 }
 
