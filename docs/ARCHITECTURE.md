@@ -17,7 +17,7 @@ Every page follows the same pattern:
 | Situation | What happens |
 | --- | --- |
 | Entering the site, typing a URL, or refreshing | The lemniscate particle loader plays, then fades out |
-| Following a link inside the site, or using back/forward | No loader; the browser cross-fades between pages |
+| Following a link inside the site, or using back/forward | No loader; the browser cross-fades between pages and the page plays its own entrance animation |
 
 It tells the two apart with the navigation type, a same-origin referrer check, and a `sessionStorage` flag set when an internal link is clicked (which keeps it working from `file://`).
 

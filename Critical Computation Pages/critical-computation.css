@@ -1,0 +1,31 @@
+.door-list {
+    display: grid;
+    gap: 0.5em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: clamp(1.25rem, 1.55vw, 1.875rem);
+}
+
+.door-list a {
+    color: var(--brown);
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: 0% 0.1em;
+    padding-bottom: 0.08em;
+    transition: background-size 320ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.door-list a::after { content: " ->"; }
+
+.door-list a:hover,
+.door-list a:focus-visible {
+    background-position: 0 100%;
+    background-size: 100% 0.1em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .door-list a { transition: none; }
+}

@@ -8,10 +8,13 @@
 
 ## Where to go
 
+The home page has three sections. **Critical Computation & Games** opens the hub below; **Projects** and **Photography** are marked "To be continued" and cannot be entered yet.
+
 | Page | What you will find | Live | Source |
 | --- | --- | --- | --- |
 | Home | Entry point with navigation to every section | [Open](https://2751833085.github.io/Welcome-from-Muyi/) | [`index.html`](index.html) |
 | About Me | Who I am, my skills, and how this site came together | [Open](https://2751833085.github.io/Welcome-from-Muyi/About%20Me%20Page/about.html) | [`About Me Page/`](About%20Me%20Page) |
+| Critical Computation & Games | Section hub: links to CC-Lab Works, Advanced CC Works and a few quick entries | [Open](https://2751833085.github.io/Welcome-from-Muyi/Critical%20Computation%20Pages/critical-computation.html) | [`Critical Computation Pages/`](Critical%20Computation%20Pages) |
 | CC-Lab Works | Five early P5.js projects: Dream, Time, Identity, Control, Game | [Open](https://2751833085.github.io/Welcome-from-Muyi/CC-Lab%20Pages/cc-lab.html) | [`CC-Lab Pages/`](CC-Lab%20Pages) |
 | Advanced CC Works | Index of the five Advanced CC projects below | [Open](https://2751833085.github.io/Welcome-from-Muyi/Advanced%20CC%20Pages/advanced-cc.html) | [`Advanced CC Pages/`](Advanced%20CC%20Pages) |
 
@@ -65,6 +68,7 @@ Each section has its own Markdown notes next to the source:
 │   ├── fonts/               Bradley Hand
 │   └── images/              Hero artwork (WebP plus PNG fallback)
 ├── About Me Page/           About page
+├── Critical Computation Pages/   Hub for the Critical Computation & Games section
 ├── CC-Lab Pages/            CC Lab archive
 ├── Advanced CC Pages/       Advanced CC index and the per-project pages
 ├── Phantopteryx-Toolbox/    Preserved community-tool prototype and its demo apps

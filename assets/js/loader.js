@@ -112,7 +112,7 @@
       html.is-loading .text1,
       html.is-loading .text2,
       html.is-loading .text3,
-      html.is-loading .quick-entry,
+      html.is-loading .text4,
       html.is-loading .mobile-home,
       html.is-loading main,
       html.is-loading aside,
@@ -137,6 +137,7 @@
       html.is-loading .text1,
       html.is-loading .text2,
       html.is-loading .text3,
+      html.is-loading .text4,
       html.is-loading .mobile-home,
       html.is-loading main,
       html.is-loading aside,
@@ -147,6 +148,7 @@
       html.is-revealed .text1,
       html.is-revealed .text2,
       html.is-revealed .text3,
+      html.is-revealed .text4,
       html.is-revealed .mobile-home,
       html.is-revealed main,
       html.is-revealed aside,
@@ -156,14 +158,6 @@
         visibility: visible !important;
         opacity: 1 !important;
         transform: none !important;
-        animation: none !important;
-      }
-
-      html.is-loading .quick-entry,
-      html.is-revealed .quick-entry {
-        visibility: visible !important;
-        opacity: 1 !important;
-        transform: rotate(-1.5deg) !important;
         animation: none !important;
       }
 
@@ -354,7 +348,7 @@
   // transition captures the page in its revealed state.
   const mountDirect = () => {
     root.classList.remove("is-loading");
-    root.classList.add("is-ready", "is-revealed");
+    root.classList.add("is-ready", "is-direct");
     window.finishLoadingScreen = () => {};
 
     if (!supportsCrossDocumentTransitions && !prefersReducedMotion) {

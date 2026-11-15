@@ -136,7 +136,7 @@ html.is-loading body {
 .text1,
 .text2,
 .text3,
-.quick-entry {
+.text4 {
     position: absolute;
     z-index: 2;
     background: transparent;
@@ -147,16 +147,16 @@ html.is-loading body {
 }
 
 .text1 { top: calc(var(--top-space) + 5vw); right: 8%; width: 30%; }
-.text2 { top: 105vw; right: 8%; width: 20%; }
+.text2 { top: 105vw; right: 6%; width: 24%; }
 .text3 { top: 131vw; left: 18%; width: 34%; }
-.quick-entry { top: 170vw; left: 8%; width: 25%; transform: rotate(-1.5deg) translateY(12px); }
+.text4 { top: 170vw; left: 8%; width: 25%; }
 
 html.is-loading .topbar,
 html.is-loading .drawing,
 html.is-loading .text1,
 html.is-loading .text2,
 html.is-loading .text3,
-html.is-loading .quick-entry {
+html.is-loading .text4 {
     visibility: hidden;
     opacity: 0;
     animation: none;
@@ -198,10 +198,34 @@ p {
     cursor: pointer;
 }
 
-.text2 a,
 .text2 .text-route { font-size: clamp(1.44rem, 3vw, 3.6rem); }
 .text2 p,
 .text3 p { font-size: clamp(0.624rem, 1.3vw, 1.56rem); }
+
+.text-route a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.text-route.is-pending {
+    cursor: default;
+    opacity: 0.72;
+}
+
+.pending-note {
+    font-size: clamp(0.816rem, 1.7vw, 2.04rem);
+    font-style: italic;
+}
+
+/* Arriving from another page of the site: play the entrance without the long
+   delays that were timed to follow the loading animation. */
+html.is-direct .drawing { animation-delay: 0ms; }
+html.is-direct .topbar { animation-delay: 120ms; }
+html.is-direct .text1,
+html.is-direct .text2,
+html.is-direct .text3,
+html.is-direct .text4 { animation-delay: 240ms; }
+html.is-direct .mobile-home { animation-delay: 0ms; }
 
 .title {
     display: block;
@@ -216,8 +240,7 @@ p {
     font-size: clamp(0.816rem, 1.7vw, 2.04rem);
 }
 
-.text-route u,
-.quick-entry u {
+.text-route u {
     position: relative;
     display: inline-block;
     padding-bottom: 0.03em;
@@ -226,9 +249,7 @@ p {
 }
 
 .text-route u::before,
-.text-route u::after,
-.quick-entry u::before,
-.quick-entry u::after {
+.text-route u::after {
     content: "";
     position: absolute;
     pointer-events: none;
@@ -242,8 +263,7 @@ p {
     transform-origin: left center;
 }
 
-.text-route u::before,
-.quick-entry u::before {
+.text-route u::before {
     left: 0.02em;
     right: 0.02em;
     bottom: -0.05em;
@@ -254,8 +274,7 @@ p {
     mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 24' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 15 C16 10 27 17 40 13 C54 9 68 15 82 13 C94 11 106 17 116 12' fill='none' stroke='black' stroke-width='7.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
-.text-route u::after,
-.quick-entry u::after {
+.text-route u::after {
     left: 0.08em;
     right: 0;
     bottom: -0.08em;
@@ -264,28 +283,6 @@ p {
     transform: rotate(0.45deg) scaleY(0.72);
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 24' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 12 C21 16 33 11 47 14 C61 17 73 10 88 13 C101 16 111 12 116 15' fill='none' stroke='black' stroke-width='5.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 24' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 12 C21 16 33 11 47 14 C61 17 73 10 88 13 C101 16 111 12 116 15' fill='none' stroke='black' stroke-width='5.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-}
-
-.quick-note {
-    display: block;
-    margin: 0 0 0.7vw 0;
-    color: #4a4a4a;
-    font-size: clamp(0.504rem, 1.05vw, 1.26rem);
-    line-height: 1.2;
-}
-
-.quick-entry a {
-    display: block;
-    margin: 0 0 0.75vw 0;
-    padding: 0;
-    border: 0;
-    background: none;
-    color: #8B4513;
-    font: inherit;
-    font-size: clamp(0.888rem, 1.85vw, 2.22rem);
-    line-height: 1.05;
-    text-align: left;
-    cursor: pointer;
 }
 
 .mobile-home { display: none; }
@@ -306,7 +303,7 @@ p {
     .text1,
     .text2,
     .text3,
-    .quick-entry,
+    .text4,
     .mobile-home {
         opacity: 1;
         transform: none;
@@ -336,7 +333,7 @@ p {
     .text1,
     .text2,
     .text3,
-    .quick-entry { display: none; }
+    .text4 { display: none; }
 
     .mobile-home {
         display: block;
@@ -500,6 +497,13 @@ p {
     }
 
     .mobile-card p { font-size: 1rem; }
+    .mobile-card .mobile-pending {
+        margin: 0;
+        padding: 12px 13px;
+        border: 1px dashed var(--mobile-line);
+        border-radius: 8px;
+        font-style: italic;
+    }
     .mobile-card.alt h2 { color: var(--mobile-green); }
     .mobile-card.note { border-color: rgba(82, 109, 128, 0.2); }
     .mobile-card.note h2 { color: var(--mobile-blue); }
