@@ -58,9 +58,12 @@ Each section has its own Markdown notes next to the source:
 ```text
 .
 ├── index.html               Home page
-├── style.css                Home page styles
-├── loading-particle.js      Loading animation and page transitions (shared by every page)
-├── RES/                     Fonts and artwork
+├── assets/
+│   ├── css/home.css         Home page styles
+│   ├── css/pages.css        Styles shared by every section page
+│   ├── js/loader.js         Loading animation and page transitions (shared by every page)
+│   ├── fonts/               Bradley Hand
+│   └── images/              Hero artwork (WebP plus PNG fallback)
 ├── About Me Page/           About page
 ├── CC-Lab Pages/            CC Lab archive
 ├── Advanced CC Pages/       Advanced CC index and the per-project pages

@@ -1,4 +1,4 @@
-@font-face { font-family: 'Bradley Hand'; src: url('RES/BradleyHandITCTT-Bold.ttf'); }
+@font-face { font-family: 'Bradley Hand'; src: url('../fonts/BradleyHandITCTT-Bold.ttf'); }
 
 * { box-sizing: border-box; }
 

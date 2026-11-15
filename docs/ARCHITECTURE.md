@@ -7,12 +7,12 @@ How [Welcome from Muyi](../README.md) is put together. The site is plain HTML, C
 Every page follows the same pattern:
 
 1. `<html class="is-loading">` hides the entry animations until the page is ready.
-2. [`loading-particle.js`](../loading-particle.js) is loaded from `<head>` and decides how the page appears.
-3. A small inline script at the end of the page waits for fonts and images, then calls `window.finishLoadingScreen()`.
+2. [`assets/js/loader.js`](../assets/js/loader.js) is loaded from `<head>` and decides how the page appears.
+3. When the loader plays, the same script waits for fonts and page resources (at least 1.2 s, at most 4.2 s) and then fades it out. Pages need no script of their own for this.
 
 ## Loader and page transitions
 
-`loading-particle.js` picks one of two paths before the first paint:
+`loader.js` picks one of two paths before the first paint:
 
 | Situation | What happens |
 | --- | --- |
@@ -29,8 +29,9 @@ All navigation uses ordinary `<a href>` links. A speculation-rules block in each
 
 ## Styles
 
-- [`style.css`](../style.css) styles the home page: a viewport-proportional desktop layout over the hero artwork, and a card layout below 47.5em.
-- Each section folder has its own stylesheet. Shared rules are duplicated per page on purpose, so pages stay independent.
+- [`assets/css/home.css`](../assets/css/home.css) styles the home page: a viewport-proportional desktop layout over the hero artwork, and a card layout below 47.5em.
+- [`assets/css/pages.css`](../assets/css/pages.css) holds everything the section pages share: layout, cards, the back link, buttons.
+- A section only keeps its own stylesheet when it has rules nobody else uses (`cc-lab.css`, `assignment2.css`, `digital-divination.css`). It is loaded after `pages.css`.
 - Font sizes use `rem` and `clamp()` so they follow browser and OS text-size settings.
 - Hover underlines on links are drawn with a background gradient that grows from the left.
 

@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="text-scale" content="scale">
-    <link rel="preload" href="../RES/BradleyHandITCTT-Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="../assets/fonts/BradleyHandITCTT-Bold.ttf" as="font" type="font/ttf" crossorigin>
     <title>CC-Lab Works | Welcome from Muyi</title>
+    <link rel="stylesheet" href="../assets/css/pages.css">
     <link rel="stylesheet" href="cc-lab.css">
-    <script src="../loading-particle.js"></script>
+    <script src="../assets/js/loader.js"></script>
     <script type="speculationrules">
     {
       "prefetch": [{
@@ -75,26 +76,6 @@
         </div>
     </main>
     <script>
-        (() => {
-            const root = document.documentElement;
-            const fontReady = document.fonts ? document.fonts.ready.catch(() => {}) : Promise.resolve();
-            const pageReady = document.readyState === "complete" ? Promise.resolve() : new Promise(resolve => window.addEventListener("load", resolve, { once: true }));
-            const minimumHold = new Promise(resolve => setTimeout(resolve, 1200));
-            const maxHold = new Promise(resolve => setTimeout(resolve, 4200));
-            const ready = Promise.all([fontReady, pageReady, minimumHold]);
-
-            Promise.race([ready, maxHold]).then(() => {
-                requestAnimationFrame(() => {
-                    if (window.finishLoadingScreen) {
-                        window.finishLoadingScreen();
-                    } else {
-                        root.classList.remove("is-loading");
-                        root.classList.add("is-ready");
-                    }
-                });
-            });
-        })();
-
         document.querySelectorAll("[data-load-sketch]").forEach(button => {
             button.addEventListener("click", () => {
                 const shell = button.closest(".sketch-shell");

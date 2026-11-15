@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="text-scale" content="scale">
-    <link rel="preload" href="../../RES/BradleyHandITCTT-Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="../../assets/fonts/BradleyHandITCTT-Bold.ttf" as="font" type="font/ttf" crossorigin>
     <title>Assignment 2 - Words in Motion | Welcome from Muyi</title>
+    <link rel="stylesheet" href="../../assets/css/pages.css">
     <link rel="stylesheet" href="assignment2.css">
-    <script src="../../loading-particle.js"></script>
+    <script src="../../assets/js/loader.js"></script>
     <script type="speculationrules">
     {
       "prefetch": [{
@@ -166,38 +167,6 @@
         requestAnimationFrame(scaleIframes);
         window.addEventListener("load", scaleIframes);
         window.addEventListener("resize", scaleIframes);
-    </script>
-    <script>
-        (() => {
-            const root = document.documentElement;
-            const loadImage = src => new Promise(resolve => {
-                const image = new Image();
-                image.onload = resolve;
-                image.onerror = resolve;
-                image.src = src;
-                if (image.complete) resolve();
-            });
-            const imageSources = Array.from(document.querySelectorAll("img[data-src]")).map(image => image.dataset.src).filter(Boolean);
-            const fontReady = document.fonts ? document.fonts.ready.catch(() => {}) : Promise.resolve();
-            const pageReady = document.readyState === "complete" ? Promise.resolve() : new Promise(resolve => window.addEventListener("load", resolve, { once: true }));
-            const minimumHold = new Promise(resolve => setTimeout(resolve, 1200));
-            const maxHold = new Promise(resolve => setTimeout(resolve, 4200));
-            const ready = Promise.all([...imageSources.map(loadImage), fontReady, pageReady, minimumHold]);
-
-            Promise.race([ready, maxHold]).then(() => {
-                document.querySelectorAll("[data-src]").forEach(node => {
-                    node.src = node.dataset.src;
-                });
-                requestAnimationFrame(() => {
-                    if (window.finishLoadingScreen) {
-                        window.finishLoadingScreen();
-                    } else {
-                        root.classList.remove("is-loading");
-                        root.classList.add("is-ready");
-                    }
-                });
-            });
-        })();
     </script>
 </body>
 </html>

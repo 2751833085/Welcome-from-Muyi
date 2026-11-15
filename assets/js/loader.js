@@ -29,6 +29,8 @@
   const settleDurationMs = 1100;
   const fadeDurationMs = 900;
   const routeFadeInMs = 420;
+  const minimumHoldMs = 1200;
+  const maximumHoldMs = 4200;
   const routeFlagKey = "portfolio:route-transition";
 
   // The full loading animation only plays when the site is entered fresh or
@@ -390,6 +392,18 @@
     window.finishLoadingScreen = () => {
       releaseLoader();
     };
+
+    // Hold the loader until fonts and page resources are in, but never for
+    // less than the minimum or more than the maximum.
+    const wait = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
+    const fontsReady = document.fonts ? document.fonts.ready.catch(() => {}) : Promise.resolve();
+    const pageLoaded =
+      document.readyState === "complete"
+        ? Promise.resolve()
+        : new Promise((resolve) => window.addEventListener("load", resolve, { once: true }));
+    Promise.race([Promise.all([fontsReady, pageLoaded, wait(minimumHoldMs)]), wait(maximumHoldMs)]).then(() => {
+      requestAnimationFrame(releaseLoader);
+    });
 
     const observer = new MutationObserver(() => {
       if (!root.classList.contains("is-loading")) {

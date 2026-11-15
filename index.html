@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="text-scale" content="scale">
-    <link rel="preload" href="RES/BradleyHandITCTT-Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="assets/fonts/BradleyHandITCTT-Bold.ttf" as="font" type="font/ttf" crossorigin>
     <title>Welcome from Muyi</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="loading-particle.js"></script>
+    <link rel="stylesheet" href="assets/css/home.css">
+    <script src="assets/js/loader.js"></script>
     <script type="speculationrules">
     {
       "prefetch": [{
@@ -84,8 +84,8 @@
     <picture class="hero-art">
         <!-- The artwork is hidden on the mobile layout, so skip the download there. -->
         <source media="(max-width: 47.5em)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-        <source type="image/webp" srcset="RES/Drawing-2200.webp 2200w, RES/Drawing.webp 4391w" sizes="100vw">
-        <img class="drawing" src="RES/Drawing.png" alt="" width="4391" height="9639" fetchpriority="high">
+        <source type="image/webp" srcset="assets/images/drawing-2200.webp 2200w, assets/images/drawing.webp 4391w" sizes="100vw">
+        <img class="drawing" src="assets/images/drawing.png" alt="" width="4391" height="9639" fetchpriority="high">
     </picture>
 
     <div class="text1">
@@ -114,43 +114,5 @@
     </div>
 
     </main>
-    <script>
-        (() => {
-            const root = document.documentElement;
-            const hero = document.querySelector(".drawing");
-
-            // Wait for the hero artwork the browser actually picked (WebP or PNG).
-            const heroReady = !hero || hero.complete
-                ? Promise.resolve()
-                : new Promise(resolve => {
-                    hero.addEventListener("load", resolve, { once: true });
-                    hero.addEventListener("error", resolve, { once: true });
-                });
-
-            const fontReady = document.fonts ? document.fonts.ready.catch(() => {}) : Promise.resolve();
-            const pageReady = new Promise(resolve => {
-                if (document.readyState === "complete") {
-                    resolve();
-                } else {
-                    window.addEventListener("load", resolve, { once: true });
-                }
-            });
-            const minimumHold = new Promise(resolve => setTimeout(resolve, 1200));
-            const maxHold = new Promise(resolve => setTimeout(resolve, 4200));
-            const ready = Promise.all([heroReady, fontReady, pageReady, minimumHold]);
-
-            Promise.race([ready, maxHold]).then(() => {
-                requestAnimationFrame(() => {
-                    if (window.finishLoadingScreen) {
-                        window.finishLoadingScreen();
-                    } else {
-                        root.classList.remove("is-loading");
-                        root.classList.add("is-ready");
-                    }
-                });
-            });
-
-        })();
-    </script>
 </body>
 </html>

@@ -23,4 +23,4 @@ Sketches are hosted on the p5.js web editor and embedded in iframes. Each card s
 | File | Purpose |
 | --- | --- |
 | [`cc-lab.html`](cc-lab.html) | Page markup, sketch cards and the click-to-load script |
-| [`cc-lab.css`](cc-lab.css) | Page styles |
+| [`cc-lab.css`](cc-lab.css) | Sketch card styles, on top of the shared [`pages.css`](../assets/css/pages.css) |

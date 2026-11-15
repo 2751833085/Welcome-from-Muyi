@@ -213,7 +213,7 @@
       text-decoration: none;
     }
   </style>
-  <script src="../../../loading-particle.js"></script>
+  <script src="../../../assets/js/loader.js"></script>
   <script type="speculationrules">
   {
     "prefetch": [{
@@ -250,25 +250,6 @@
     </div>
   </main>
   <script>
-    (() => {
-      const root = document.documentElement;
-      const fontReady = document.fonts ? document.fonts.ready.catch(() => {}) : Promise.resolve();
-      const pageReady = document.readyState === "complete" ? Promise.resolve() : new Promise(resolve => window.addEventListener("load", resolve, { once: true }));
-      const minimumHold = new Promise(resolve => setTimeout(resolve, 1200));
-      const maxHold = new Promise(resolve => setTimeout(resolve, 4200));
-
-      Promise.race([Promise.all([fontReady, pageReady, minimumHold]), maxHold]).then(() => {
-        requestAnimationFrame(() => {
-          if (window.finishLoadingScreen) {
-                        window.finishLoadingScreen();
-                    } else {
-                        root.classList.remove("is-loading");
-                        root.classList.add("is-ready");
-                    }
-        });
-      });
-    })();
-
     const preview = document.getElementById('preview');
     const empty = document.getElementById('empty');
     const controls = document.querySelectorAll('[data-filter]');

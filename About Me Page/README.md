@@ -18,7 +18,6 @@ The about page of [Welcome from Muyi](../README.md).
 
 | File | Purpose |
 | --- | --- |
-| [`about.html`](about.html) | Page markup and the script that releases the loading screen |
-| [`about.css`](about.css) | Page styles |
+| [`about.html`](about.html) | Page markup |
 
-The loader and page transitions come from the shared [`loading-particle.js`](../loading-particle.js); see [the architecture notes](../docs/ARCHITECTURE.md).
+Styles come from the shared [`pages.css`](../assets/css/pages.css), and the loader and page transitions from [`loader.js`](../assets/js/loader.js); see [the architecture notes](../docs/ARCHITECTURE.md).

@@ -44,4 +44,4 @@ Both pages describe the Phantopteryx Toolbox. The prototype kept in this reposit
 | File | Purpose |
 | --- | --- |
 | [`advanced-cc.html`](advanced-cc.html) | Index page with one card per project |
-| [`advanced-cc.css`](advanced-cc.css) | Index page styles |
+| [`../assets/css/pages.css`](../assets/css/pages.css) | Styles shared with the other section pages |
